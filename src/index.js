@@ -1,10 +1,11 @@
 /* eslint-env browser */
-/* global process */
 import 'babel/polyfill';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Root from './Root';
 
-React.render(
+ReactDOM.render(
   <Root />,
   document.getElementById('root')
 );
+

@@ -30,7 +30,7 @@ browserSync({
       (req, res, next) => {
         if (req.url !== '/') { return next(); }
 
-        fs.readFile(path.join(__dirname, 'template.html'), {
+        fs.readFile(path.join(__dirname, './build/template.html'), {
           encoding: 'utf-8'
         }, (err, source) => {
           if (err) return next(err);
