@@ -1,11 +1,11 @@
 /* global module, require */
 import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers';
-import thunkMiddleware from 'redux-thunk';
+import thunk from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
 
 const createStoreWithMiddleware = applyMiddleware(
-  thunkMiddleware,
+  thunk,
   loggerMiddleware
 )(createStore);
 

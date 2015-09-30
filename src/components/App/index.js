@@ -12,7 +12,7 @@ import { addEntity, removeEntity } from '../../actions';
   addEntity,
   removeEntity
 })
-export default class List extends Component {
+export default class App extends Component {
   static propTypes = {
     addEntity: PropTypes.func,
     entities: PropTypes.array,
@@ -32,7 +32,7 @@ export default class List extends Component {
       return (
         <li key={item.id}>
           {item.id}
-          <button onClick={() => this.removeEntity(item.id)}>X</button>
+          <button onClick={() => this.removeEntity(item.id)}> X </button>
         </li>
         );
     });
