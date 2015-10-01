@@ -4,7 +4,6 @@ import {
 } from '../constants';
 
 export default (state = [], action) => {
-  console.log(action)
   switch (action.type) {
     case ADD_ENTITY:
       return state.concat(action);

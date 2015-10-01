@@ -9,11 +9,7 @@ import NotFound from './components/NotFound';
 import { createHistory } from 'history';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-// import createRedux from './createStore';
-import reducer from './reducers';
-
-const store = createStore(reducer);
+import configureStore from './store';
 
 const routes = (
   <Route path="/" component={Layout}>
@@ -23,7 +19,7 @@ const routes = (
 );
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={configureStore()}>
     <Router history={createHistory()}>
       {routes}
     </Router>

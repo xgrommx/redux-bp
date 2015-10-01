@@ -9,8 +9,6 @@ export default class Header extends React.Component {
     return (
       <div>
         <Logo />
-        <div styleName="wrapper">
-        </div>
       </div>
     );
   }
