@@ -1,6 +1,6 @@
-import entities from './entities';
+import posts from './posts';
 import { combineReducers } from 'redux';
 
 export default combineReducers({
-  entities
+  posts
 });

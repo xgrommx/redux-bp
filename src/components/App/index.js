@@ -3,47 +3,42 @@ import CSSModules from 'react-css-modules';
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { addEntity, removeEntity } from '../../actions';
 
 @CSSModules(styles)
-@connect(state => ({
-  entities: state.entities
-}), {
-  addEntity,
-  removeEntity
-})
+@connect(state => ({ posts: state.posts }))
 export default class App extends Component {
   static propTypes = {
-    addEntity: PropTypes.func,
-    entities: PropTypes.array,
-    removeEntity: PropTypes.func
-  }
-
-  addEntity = () => {
-    this.props.addEntity();
-  }
-
-  removeEntity = (id) => {
-    this.props.removeEntity(id);
+    fetchPosts: PropTypes.func,
+    posts: PropTypes.array
   }
 
   render() {
-    const entities = this.props.entities.map(item => {
+    const posts = this.props.posts.map(item => {
       return (
         <li key={item.id}>
-          {item.id}
-          <button onClick={() => this.removeEntity(item.id)}> X </button>
+          <a href={`https://reddit.com/${item.permalink}`}>
+            {item.title}
+          </a>
         </li>
-        );
+      );
     });
-    return (
-      <div styleName="wrapper">
-        <h2>Add entities</h2>
+
+    if (this.props.posts.length > 1) {
+      return (
+        <div styleName="wrapper">
           <ul>
-            {entities}
+            {posts}
           </ul>
-        <button onClick={this.addEntity}>Add entity</button>
-      </div>
-    );
+        </div>
+      );
+    } else {
+      return (
+        <div styleName="wrapper">
+          <ul>
+            spinner ...
+          </ul>
+        </div>
+      );
+    }
   }
 }
