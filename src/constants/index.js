@@ -1,6 +1,6 @@
 import keyMirror from 'key-mirror';
 
 export default keyMirror({
-  ADD_ENTITY: null,
-  REMOVE_ENTITY: null
+  FETCH_POSTS: null,
+  FETCH_POSTS_SUCCESS: null
 });

@@ -7,12 +7,7 @@ export default class Logo extends React.Component {
   render() {
     return (
       <div styleName="logo">
-        <span styleName="title">
-         le Rèdùx Boìlerplatè
-        </span>
-        <span styleName="emoji">
-          ✨
-        </span>
+        logo
       </div>
     );
   }
