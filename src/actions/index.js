@@ -1,7 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
 import {
-  FETCH_POSTS,
   FETCH_POSTS_SUCCESS
 } from '../constants';
 
@@ -19,6 +18,6 @@ export function fetchPosts(reddit) {
       .then(json => {
         dispatch(receivePosts(reddit, json));
       })
-      .catch(err => console.log(err));
+      .catch(err => new Error(err));
   };
 }

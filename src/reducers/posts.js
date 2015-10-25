@@ -9,10 +9,14 @@ export default (state = [], action) => {
       return state;
 
     case FETCH_POSTS_SUCCESS:
-      return state.concat(action.posts);
+      return action.posts.map(i => {
+        return {
+          ...i,
+          rating: 0
+        };
+      });
 
     default:
       return state;
   }
 };
-
